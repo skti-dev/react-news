@@ -1,9 +1,22 @@
+:root {
+  --transition-timing: 250ms;
+  --transparent-color: rgba(125, 125, 125, .15);
+  --border-radius: 7px;
+  --spacing: 5px;
+  --bigger-spacing: calc(var(--spacing) * 2);
+  --font-color: #313131;
+  --font-secondary: #646464;
+  --color-highlight: rgb(14, 115, 209);
+  --shadow-color: #333;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  color: var(--font-color);
 }
 
 a {
@@ -13,4 +26,45 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+/* Icons */
+.icon {
+  --icon-size: 3em;
+  --svg-size: 1.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--icon-size);
+  height: var(--icon-size);
+  color: var(--font-secondary)
+}
+
+.icon.bigger {
+  --svg-size: 2em;
+}
+
+.icon.highlight {
+  color: var(--color-highlight)
+}
+
+.icon.dark {
+  color: var(--font-color);
+}
+
+.icon svg {
+  width: var(--svg-size);
+  height: var(--svg-size);
+}
+
+/* Hover Effect */
+.clickable {
+  transition: all var(--transition-timing);
+  cursor: pointer;
+  background-color: transparent;
+  border-radius: 50%;
+}
+
+.clickable:hover, .clickable.active {
+  background-color: var(--transparent-color);
 }
